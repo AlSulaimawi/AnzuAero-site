@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anzu Aero | Advanced Aerospace & Stealth R&D</title>
+    <style>
+        :root {
+            /* Text Colors */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #22d3ee; /* Bright Turquoise */
+            --accent-glow: rgba(34, 211, 238, 0.4);
+            
+            /* Glassmorphism Borders */
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --border-accent: rgba(34, 211, 238, 0.3);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            
+            /* The Magic Background: Indigo to Turquoise Gradient + Tech Mosaic Grid */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(135deg, #091024 0%, #172a6c 50%, #0e6b72 100%);
+            background-size: 30px 30px, 30px 30px, cover;
+            background-attachment: fixed; /* Keeps background fixed while scrolling */
+            background-position: center center;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(9, 16, 36, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glass);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            text-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Premium Glassmorphism Cards */
+        .hero, .section {
+            background: rgba(15, 25, 50, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero:hover, .section:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 30px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 15px;
+            margin-top: 0;
+            display: inline-block;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 280px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-accent);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            margin: 25px 0 15px 0;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            background: rgba(9, 16, 36, 0.8);
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav a { margin: 0 10px; font-size: 0.9rem; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ANZU <span>AERO</span></div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="contact.html">Contact & Partners</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>Advanced Aerospace <span>&amp; Stealth R&amp;D</span></h1>
+            <p class="subtitle">An advanced R&D company specializing in aerospace technologies, aerodynamics, and dual-use innovations.</p>
+            <div class="status-badge">Phase: Founding & Startup | Lead Researcher Initiated</div>
+        </div>
+
+        <div class="section">
+            <h2>The "Anzu" Strategic Project</h2>
+            <p>The Anzu project stands as our premier comprehensive scientific research initiative featuring advanced conceptual designs in modern aviation. The project integrates unique modern stealth innovations combining <strong>aerodynamic body power</strong> with <strong>radar cross-section (RCS) stealth</strong> (a two-in-one solution), utilizing lightweight composite materials optimized for exceptional performance and efficiency across both domains.</p>
+            
+            <div class="image-placeholder">
+                [Placeholder: Anzu Project Conceptual Blueprint / Design Overview]
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem;">Figure 1: Conceptual integration of aerodynamic body control and radar stealth.</p>
+        </div>
+
+        <div class="section">
+            <h2>Aerodynamics & Dual-Use Technologies</h2>
+            <p>Alongside the Anzu project, our research portfolio includes advanced studies in <strong>aerodynamics</strong>, fluid/gas flow analysis, and high-performance dual-use engineering applications designed to meet rigorous civilian and military requirements.</p>
+            
+            <div class="image-placeholder">
+                [Placeholder: CFD Simulation Results or Composite Material Analysis]
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem;">Figure 2: Drag analysis and aerodynamic efficiency studies.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Anzu Aero. All rights reserved by Lead Researcher Ahmed.</p>
+    </footer>
+
+</body>
+</html>
